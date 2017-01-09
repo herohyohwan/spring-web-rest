@@ -1,0 +1,385 @@
+2017-01-09 17:21:34.924 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:21:34.971 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@32cf48b7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@679b62af, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5cdd8682, org.springframework.test.context.transaction.TransactionalTestExecutionListener@d6da883, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@45afc369]
+2017-01-09 17:21:35.127 INFO  [main]XmlBeanDefinitionReader[loadBeanDefinitions:317] - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml]
+2017-01-09 17:21:35.511 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7fe8ea47: startup date [Mon Jan 09 17:21:35 KST 2017]; root of context hierarchy
+2017-01-09 17:21:35.903 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:21:36.137 WARN  [main]GenericWebApplicationContext[refresh:487] - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'databaseConfig': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String com.example.demo.config.DatabaseConfig.jdbcDriver; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Property or field 'coreProperties' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public?
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:725)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:132)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:59)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:260)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:63)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:83)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:74)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:169)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:109)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:199)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:251)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:253)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:237)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String com.example.demo.config.DatabaseConfig.jdbcDriver; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Property or field 'coreProperties' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public?
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:555)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 45 common frames omitted
+Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Property or field 'coreProperties' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public?
+	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:164)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.evaluateBeanDefinitionString(AbstractBeanFactory.java:1362)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:919)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:904)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:527)
+	... 47 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Property or field 'coreProperties' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:226)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:93)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:81)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:50)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:86)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:115)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:240)
+	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:161)
+	... 51 common frames omitted
+2017-01-09 17:21:36.139 ERROR [main]TestContextManager[prepareTestInstance:215] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@32cf48b7] to prepare test instance [com.example.demo.AppTests@496bc455]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:91)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:74)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:169)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:109)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:199)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:251)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:253)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:51)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:237)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'databaseConfig': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String com.example.demo.config.DatabaseConfig.jdbcDriver; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Property or field 'coreProperties' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public?
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:725)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:132)
+	at org.springframework.test.context.web.AbstractGenericWebContextLoader.loadContext(AbstractGenericWebContextLoader.java:59)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:260)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:63)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:83)
+	... 29 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String com.example.demo.config.DatabaseConfig.jdbcDriver; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Property or field 'coreProperties' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public?
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:555)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 45 common frames omitted
+Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Property or field 'coreProperties' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public?
+	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:164)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.evaluateBeanDefinitionString(AbstractBeanFactory.java:1362)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:919)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:904)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:527)
+	... 47 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Property or field 'coreProperties' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext' - maybe not public?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:226)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:93)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:81)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:50)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:86)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:115)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:240)
+	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:161)
+	... 51 common frames omitted
+2017-01-09 17:33:51.379 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:33:51.411 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:33:51.717 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:33:51 KST 2017]; root of context hierarchy
+2017-01-09 17:33:52.279 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:33:52.464 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:33:52.724 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:33:53.185 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:33:53.230 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.009s)
+2017-01-09 17:33:53.252 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:33:53.283 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:33:53.284 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:33:53.309 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.059s).
+2017-01-09 17:33:53.831 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:33:53.831 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:33:54.201 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 369 ms
+2017-01-09 17:33:54.246 WARN  [main]PageNotFound[noHandlerFound:1120] - No mapping found for HTTP request with URI [/] in DispatcherServlet with name ''
+2017-01-09 17:33:54.267 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:33:51 KST 2017]; root of context hierarchy
+2017-01-09 17:36:46.241 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:36:46.264 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:36:46.561 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:36:46 KST 2017]; root of context hierarchy
+2017-01-09 17:36:47.363 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:36:47.706 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:36:47.831 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:36:48.148 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:36:48.196 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.010s)
+2017-01-09 17:36:48.213 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:36:48.262 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:36:48.263 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:36:48.284 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.073s).
+2017-01-09 17:36:49.126 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:36:49.127 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:36:49.663 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:36:46 KST 2017]; root of context hierarchy
+2017-01-09 17:36:49.714 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:36:49.807 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:36:49.808 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:36:49.825 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 17 ms
+2017-01-09 17:36:49.989 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:36:46 KST 2017]; root of context hierarchy
+2017-01-09 17:38:25.002 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:38:25.023 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:38:25.192 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:38:25 KST 2017]; root of context hierarchy
+2017-01-09 17:38:25.895 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:38:26.176 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:38:26.295 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:38:26.574 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:38:26.671 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.017s)
+2017-01-09 17:38:26.692 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:38:26.733 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:38:26.734 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:38:26.778 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.087s).
+2017-01-09 17:38:27.458 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:38:27.459 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:38:27.979 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:38:25 KST 2017]; root of context hierarchy
+2017-01-09 17:38:28.034 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:38:28.104 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:38:28.104 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:38:28.119 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 14 ms
+2017-01-09 17:38:28.261 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:38:25 KST 2017]; root of context hierarchy
+2017-01-09 17:41:41.723 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:41:41.793 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:41:41.951 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:41:41 KST 2017]; root of context hierarchy
+2017-01-09 17:41:42.824 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:41:43.113 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:41:43.289 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:41:43.604 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:41:43.670 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.022s)
+2017-01-09 17:41:43.698 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:41:43.733 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:41:43.734 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:41:43.767 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.072s).
+2017-01-09 17:41:44.488 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:41:44.488 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:41:45.205 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:41:41 KST 2017]; root of context hierarchy
+2017-01-09 17:41:45.273 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:41:45.366 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:41:45.367 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:41:45.386 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 19 ms
+2017-01-09 17:41:45.541 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:41:41 KST 2017]; root of context hierarchy
+2017-01-09 17:42:10.365 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:42:10.402 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:42:10.589 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:42:10 KST 2017]; root of context hierarchy
+2017-01-09 17:42:11.241 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:42:11.441 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:42:11.762 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:42:12.132 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:42:12.184 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.008s)
+2017-01-09 17:42:12.206 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:42:12.234 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:42:12.235 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:42:12.272 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.073s).
+2017-01-09 17:42:13.018 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:42:13.019 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:42:13.432 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:42:10 KST 2017]; root of context hierarchy
+2017-01-09 17:42:13.473 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:42:13.554 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:42:13.556 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:42:13.574 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 17 ms
+2017-01-09 17:42:13.718 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:42:10 KST 2017]; root of context hierarchy
+2017-01-09 17:43:44.087 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:43:44.161 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:43:44.310 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:43:44 KST 2017]; root of context hierarchy
+2017-01-09 17:43:45.079 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:43:45.263 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:43:45.415 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:43:45.718 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:43:45.766 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.010s)
+2017-01-09 17:43:45.781 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:43:45.811 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:43:45.812 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:43:45.853 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.073s).
+2017-01-09 17:43:46.634 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:43:46.635 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:43:47.290 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:43:44 KST 2017]; root of context hierarchy
+2017-01-09 17:43:47.344 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:43:47.464 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:43:47.465 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:43:47.482 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 17 ms
+2017-01-09 17:43:47.709 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:43:44 KST 2017]; root of context hierarchy
+2017-01-09 17:45:50.923 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:45:50.989 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@550ee7e5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5f9b2141, org.springframework.test.context.support.DirtiesContextTestExecutionListener@247d8ae, org.springframework.test.context.transaction.TransactionalTestExecutionListener@48974e45, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6a84a97d]
+2017-01-09 17:45:51.244 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@53ce1329: startup date [Mon Jan 09 17:45:51 KST 2017]; root of context hierarchy
+2017-01-09 17:45:51.863 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:45:52.014 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:45:52.224 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:45:52.535 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:45:52.603 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.020s)
+2017-01-09 17:45:52.631 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:45:52.674 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:45:52.674 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:45:52.695 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.066s).
+2017-01-09 17:45:53.460 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:45:53.461 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:45:53.980 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@53ce1329: startup date [Mon Jan 09 17:45:51 KST 2017]; root of context hierarchy
+2017-01-09 17:45:54.035 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:45:54.123 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:45:54.124 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:45:54.143 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 19 ms
+2017-01-09 17:46:29.490 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@53ce1329: startup date [Mon Jan 09 17:45:51 KST 2017]; root of context hierarchy
+2017-01-09 17:47:40.724 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:47:40.747 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:47:40.917 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:47:40 KST 2017]; root of context hierarchy
+2017-01-09 17:47:41.608 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:47:41.813 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:47:42.062 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:47:42.375 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:47:42.431 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.008s)
+2017-01-09 17:47:42.450 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:47:42.478 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:47:42.479 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:47:42.535 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.086s).
+2017-01-09 17:47:43.130 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:47:43.131 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:47:43.541 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:47:40 KST 2017]; root of context hierarchy
+2017-01-09 17:47:43.592 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:47:43.670 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:47:43.670 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:47:43.685 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 15 ms
+2017-01-09 17:47:43.816 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:47:40 KST 2017]; root of context hierarchy
+2017-01-09 17:49:15.156 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:49:15.186 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:49:15.351 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:49:15 KST 2017]; root of context hierarchy
+2017-01-09 17:49:16.054 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:49:16.185 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:49:16.344 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:49:16.614 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:49:16.659 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.010s)
+2017-01-09 17:49:16.671 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:49:16.694 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:49:16.694 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:49:16.712 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.042s).
+2017-01-09 17:49:17.316 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:49:17.317 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:49:17.814 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:49:15 KST 2017]; root of context hierarchy
+2017-01-09 17:49:17.868 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:49:18.093 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:49:18.093 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:49:18.114 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 20 ms
+2017-01-09 17:49:18.344 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:49:15 KST 2017]; root of context hierarchy
+2017-01-09 17:51:08.832 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:255] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 17:51:08.868 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:181] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76a4d6c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@517cd4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6cc7b4de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@32cf48b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@679b62af]
+2017-01-09 17:51:09.034 INFO  [main]GenericWebApplicationContext[prepareRefresh:510] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:51:09 KST 2017]; root of context hierarchy
+2017-01-09 17:51:09.800 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:153] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 17:51:09.967 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 17:51:10.147 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 17:51:10.452 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 17:51:10.520 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.018s)
+2017-01-09 17:51:10.580 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 17:51:10.638 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 17:51:10.639 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 17:51:10.660 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.122s).
+2017-01-09 17:51:11.398 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 17:51:11.399 INFO  [main]RequestMappingHandlerMapping[registerHandlerMethod:220] - Mapped "{[//users],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 17:51:12.140 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:523] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:51:09 KST 2017]; root of context hierarchy
+2017-01-09 17:51:12.200 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:267] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 17:51:12.290 INFO  [main]MockServletContext[log:444] - Initializing Spring FrameworkServlet ''
+2017-01-09 17:51:12.291 INFO  [main]TestDispatcherServlet[initServletBean:484] - FrameworkServlet '': initialization started
+2017-01-09 17:51:12.308 INFO  [main]TestDispatcherServlet[initServletBean:503] - FrameworkServlet '': initialization completed in 17 ms
+2017-01-09 17:51:12.548 INFO  [Thread-3]GenericWebApplicationContext[doClose:862] - Closing org.springframework.web.context.support.GenericWebApplicationContext@351d0846: startup date [Mon Jan 09 17:51:09 KST 2017]; root of context hierarchy
+2017-01-09 18:43:08.435 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:260] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 18:43:08.460 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:187] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@71248c21, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@442675e1, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6166e06f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@49e202ad, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c72da34, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6b0c2d26]
+2017-01-09 18:43:08.703 INFO  [main]GenericWebApplicationContext[prepareRefresh:582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@ca263c2: startup date [Mon Jan 09 18:43:08 KST 2017]; root of context hierarchy
+2017-01-09 18:43:09.580 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:155] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 18:43:09.757 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 18:43:09.962 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 18:43:10.195 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 18:43:10.247 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.008s)
+2017-01-09 18:43:10.261 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 18:43:10.290 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 18:43:10.290 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 18:43:10.308 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.048s).
+2017-01-09 18:43:11.107 INFO  [main]RequestMappingHandlerMapping[register:543] - Mapped "{[/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 18:43:11.108 INFO  [main]RequestMappingHandlerMapping[register:543] - Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 18:43:11.615 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@ca263c2: startup date [Mon Jan 09 18:43:08 KST 2017]; root of context hierarchy
+2017-01-09 18:43:11.686 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:273] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 18:43:11.857 INFO  [main]MockServletContext[log:440] - Initializing Spring FrameworkServlet ''
+2017-01-09 18:43:11.857 INFO  [main]TestDispatcherServlet[initServletBean:489] - FrameworkServlet '': initialization started
+2017-01-09 18:43:11.878 INFO  [main]TestDispatcherServlet[initServletBean:508] - FrameworkServlet '': initialization completed in 21 ms
+2017-01-09 18:43:12.254 INFO  [Thread-3]GenericWebApplicationContext[doClose:987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@ca263c2: startup date [Mon Jan 09 18:43:08 KST 2017]; root of context hierarchy
+2017-01-09 19:16:19.302 INFO  [main]WebTestContextBootstrapper[getDefaultTestExecutionListenerClassNames:260] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-01-09 19:16:19.333 INFO  [main]WebTestContextBootstrapper[getTestExecutionListeners:187] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6b0c2d26, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3d3fcdb0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@641147d0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6e38921c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@64d7f7e0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@27c6e487]
+2017-01-09 19:16:19.625 INFO  [main]GenericWebApplicationContext[prepareRefresh:582] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@341b80b2: startup date [Mon Jan 09 19:16:19 KST 2017]; root of context hierarchy
+2017-01-09 19:16:20.411 INFO  [main]AutowiredAnnotationBeanPostProcessor[<init>:155] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-09 19:16:20.631 INFO  [main]PropertiesFactoryBean[loadProperties:172] - Loading properties file from class path resource [properties/dev/db.properties]
+2017-01-09 19:16:20.909 INFO  [main]VersionPrinter[info:44] - Flyway 4.0.3 by Boxfuse
+2017-01-09 19:16:21.165 INFO  [main]DbSupportFactory[info:44] - Database: jdbc:h2:mem:dev (H2 1.4)
+2017-01-09 19:16:21.222 INFO  [main]DbValidate[info:44] - Successfully validated 1 migration (execution time 00:00.016s)
+2017-01-09 19:16:21.239 INFO  [main]MetaDataTableImpl[info:44] - Creating Metadata table: "BFDC"."schema_version"
+2017-01-09 19:16:21.282 INFO  [main]DbMigrate[info:44] - Current version of schema "BFDC": << Empty Schema >>
+2017-01-09 19:16:21.283 INFO  [main]DbMigrate[info:44] - Migrating schema "BFDC" to version 1 - Create Table auth users
+2017-01-09 19:16:21.309 INFO  [main]DbMigrate[info:44] - Successfully applied 1 migration to schema "BFDC" (execution time 00:00.071s).
+2017-01-09 19:16:22.089 INFO  [main]RequestMappingHandlerMapping[register:543] - Mapped "{[/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.example.demo.service.auth.model.User>> com.example.demo.web.controller.HelloController.users()
+2017-01-09 19:16:22.092 INFO  [main]RequestMappingHandlerMapping[register:543] - Mapped "{[/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.example.demo.web.response.SimpleResponse> com.example.demo.web.controller.HelloController.printWelcome()
+2017-01-09 19:16:22.702 INFO  [main]RequestMappingHandlerAdapter[initControllerAdviceCache:534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@341b80b2: startup date [Mon Jan 09 19:16:19 KST 2017]; root of context hierarchy
+2017-01-09 19:16:22.787 INFO  [main]ExceptionHandlerExceptionResolver[initExceptionHandlerAdviceCache:273] - Detected @ExceptionHandler methods in reportControllerAdvice
+2017-01-09 19:16:23.093 INFO  [main]MockServletContext[log:440] - Initializing Spring FrameworkServlet ''
+2017-01-09 19:16:23.094 INFO  [main]TestDispatcherServlet[initServletBean:489] - FrameworkServlet '': initialization started
+2017-01-09 19:16:23.195 INFO  [main]TestDispatcherServlet[initServletBean:508] - FrameworkServlet '': initialization completed in 101 ms
+2017-01-09 19:16:23.529 INFO  [Thread-3]GenericWebApplicationContext[doClose:987] - Closing org.springframework.web.context.support.GenericWebApplicationContext@341b80b2: startup date [Mon Jan 09 19:16:19 KST 2017]; root of context hierarchy
