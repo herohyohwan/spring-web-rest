@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 /**
  * SimpleResponse
  *
- * @author luigi.yoon
+ * @author herohyohwan@gmail.com
  * @date 2017.01.09
  */
 @Data
@@ -146,7 +146,7 @@ public class SimpleResponse {
     /**
      * Result
      *
-     * @author luigi.yoon
+     * @author herohyohwan@gmail.com
      * @date 2017.01.09
      */
     public enum Result {

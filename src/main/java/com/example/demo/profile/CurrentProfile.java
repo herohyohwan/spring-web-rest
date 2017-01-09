@@ -5,7 +5,7 @@ import org.springframework.core.env.Environment;
 /**
  * CurrentProfile
  *
- * @author luigi.yoon
+ * @author herohyohwan@gmail.com
  * @date 2017.01.09
  */
 public class CurrentProfile {

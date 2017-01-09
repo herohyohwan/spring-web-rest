@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * ReportControllerAdvice
  *
- * @author luigi.yoon
+ * @author herohyohwan@gmail.com
  * @date 2017.01.09
  */
 @ControllerAdvice

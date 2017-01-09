@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 /**
  * DatabaseConfig
  *
- * @author luigi.yoon
+ * @author herohyohwan@gmail.com
  * @date 2017.01.09
  */
 @Configuration

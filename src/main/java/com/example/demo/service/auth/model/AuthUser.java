@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * AuthUser
  *
- * @author luigi.yoon
+ * @author herohyohwan@gmail.com
  * @date 2017.01.09
  */
 public class AuthUser implements User {
@@ -222,7 +222,7 @@ public class AuthUser implements User {
     /**
      * Builder
      *
-     * @author luigi.yoon
+     * @author herohyohwan@gmail.com
      * @date 2017.01.09
      */
     public static class Builder {

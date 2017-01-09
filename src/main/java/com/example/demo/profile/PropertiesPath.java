@@ -7,7 +7,7 @@ import org.springframework.core.io.Resource;
 /**
  * PropertiesPath
  *
- * @author luigi.yoon
+ * @author herohyohwan@gmail.com
  * @date 2017.01.09
  */
 public class PropertiesPath {

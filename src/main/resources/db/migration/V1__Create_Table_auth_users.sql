@@ -37,7 +37,7 @@ INSERT INTO auth_users (
 	'luigi',
 	'yoon',
 	'',
-	'luigi.yoon@demo.com',
+	'herohyohwan@gmail.com@demo.com',
 	'team3',
 	now()
 )

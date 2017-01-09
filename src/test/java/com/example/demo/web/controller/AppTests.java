@@ -20,21 +20,41 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
+/**
+ * AppTests
+ *
+ * @author herohyohwan@gmail.com
+ * @date 2017.01.09
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = { TestApplicationConfig.class })
 public class AppTests {
+    /**
+     * The Mock mvc.
+     */
     private MockMvc mockMvc;
 
+    /**
+     * The Wac.
+     */
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     protected WebApplicationContext wac;
 
+    /**
+     * Sets .
+     */
     @Before
     public void setup() {
         this.mockMvc = webAppContextSetup(this.wac).build();
     }
 
+    /**
+     * Simple.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void simple() throws Exception {
         mockMvc.perform(get("/"))

@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * AuthUserService
  *
- * @author luigi.yoon
+ * @author herohyohwan@gmail.com
  * @date 2017.01.09
  */
 public interface AuthUserService {

@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 /**
  * AuthUserServiceTest
  *
- * @author luigi.yoon
+ * @author herohyohwan @gmail.com
  * @date 17. 1. 9.
  */
 public class AuthUserServiceTest {

@@ -3,7 +3,7 @@ package com.example.demo.profile;
 /**
  * Profile
  *
- * @author luigi.yoon
+ * @author herohyohwan@gmail.com
  * @date 2017.01.09
  */
 public enum Profile {
