@@ -21,6 +21,7 @@
         <servlet.jsp-api.version>2.3.1</servlet.jsp-api.version>
         <javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
         <javax.el.version>3.0.0</javax.el.version>
+        <tomcat.version>8.5.9</tomcat.version>
 
         <!-- spring -->
         <spring.version>4.3.5.RELEASE</spring.version>
@@ -117,17 +118,22 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <!-- This provided tomcat8 -->
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${javax.servlet.jstl.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <!-- This provided tomcat8 -->
             <groupId>javax.el</groupId>
             <artifactId>javax.el-api</artifactId>
             <version>${javax.el.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <!-- This provided tomcat8 -->
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+            <version>${tomcat.version}</version>
             <scope>provided</scope>
         </dependency>
 
