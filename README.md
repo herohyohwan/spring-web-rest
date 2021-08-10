@@ -11,11 +11,12 @@ dependencies :
 
 - jdk 1.8
 - tomcat 8
-- spring 4.3.5.RELEASE
-- logback 1.1.8
-- jackson 2.8.5
-- mybatis 3.4.2
-- junit 4.12
+- spring 5.3.9
+- logback 1.2.5
+- jackson 2.12.4
+- mybatis 3.5.7
+- junit 4.13.2
+- h2 1.4.200
 <br/>
 ...
 

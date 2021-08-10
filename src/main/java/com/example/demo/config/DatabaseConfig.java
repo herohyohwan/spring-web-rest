@@ -1,9 +1,10 @@
 package com.example.demo.config;
 
 import com.example.demo.profile.CurrentProfile;
-import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.flywaydb.core.Flyway;
+import org.flywaydb.core.api.configuration.ClassicConfiguration;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -68,7 +69,7 @@ public class DatabaseConfig {
         dataSource.setUrl(jdbcUrl);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-        dataSource.setMaxActive(20);
+        dataSource.setMaxTotal(20);
         dataSource.setTestWhileIdle(true);
         dataSource.setTimeBetweenEvictionRunsMillis(720000);
         dataSource.setValidationQuery("select 1");
@@ -82,9 +83,15 @@ public class DatabaseConfig {
      */
     @Bean(name = "flyway", initMethod = "migrate")
     public Flyway flyway() {
-        Flyway flyway = new Flyway();
-        flyway.setDataSource(dataSource());
-        flyway.setCleanOnValidationError(true);
+
+
+        ClassicConfiguration configuration = new ClassicConfiguration();
+        configuration.setDataSource(dataSource());
+        configuration.setCleanOnValidationError(true);
+        configuration.setLocationsAsStrings("db/migration");
+        configuration.setCleanOnValidationError(true);
+
+        Flyway flyway = new Flyway(configuration);
 
         return flyway;
     }
