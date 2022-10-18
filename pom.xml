@@ -31,7 +31,7 @@
         <logback.version>1.2.5</logback.version>
 
         <!-- json -->
-        <jackson.version>2.12.4</jackson.version>
+        <jackson.version>2.13.4.1</jackson.version>
 
         <!-- validation -->
         <javax.validation.version>2.0.1.Final</javax.validation.version>
